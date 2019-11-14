@@ -14,5 +14,16 @@
             </mat-error>
         </mat-form-field>
         <div></div>
+        <mat-form-field class="space">
+            <input matInput placeholder="Password" [formControl]="passwordFormControl" [errorStateMatcher]="errorMatcherPassword" class="big-dog">
+            <mat-error *ngIf="passwordFormControl.hasError('pass') && !passwordFormControl.hasError('required')">
+                Please enter a password
+            </mat-error>
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                Password is
+                <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
     </form>
 </div>
